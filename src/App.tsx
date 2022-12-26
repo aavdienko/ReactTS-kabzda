@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <PageTitle title={'This is App Component'} />
-      <Rating value={3}/>
+      <Rating value={0}/>
       <Accordion title={'Menu'}/>
       <Rating value={4}/>
       <Rating value={1}/>
@@ -20,7 +20,11 @@ function App() {
   );
 }
 
-function PageTitle(props: any) {
+type PageTitlePropsType ={
+  title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
   console.log('PageTitle redering');
   return <h1>{props.title}</h1>;
 }
