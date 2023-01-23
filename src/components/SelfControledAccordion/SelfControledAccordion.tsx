@@ -14,9 +14,8 @@ export function SelfControledAccordion(props: AccordionPropsType) {
   return (
     <div>
       <AccordionTitle title={props.title} /> 
-      <button onClick={()=> setColapsed(true)}>uncollapsed</button>
-      <button onClick={()=> setColapsed(false)}>collapsed</button>
-      { collapsed && <AccordionBody />}
+      <button onClick={()=> setColapsed(!collapsed)}>uncollapsed</button>
+      { !collapsed && <AccordionBody />}
     </div>
   );
 }

@@ -4,12 +4,13 @@ import Accordion from './components/Accordion/Accordion';
 import { OnOff } from './components/OnOff/OnOff';
 import Rating from './components/Rating/Rating';
 import { SelfControledAccordion } from './components/SelfControledAccordion/SelfControledAccordion';
+import { SelfControledRaiting } from './components/SelfControledRaiting/SelfControledRaiting';
 
 
 function App() {
   console.log('App redering');
   return (
-    <div>
+    <div className={'App'}>
       <OnOff />
       <OnOff />
       <OnOff />
@@ -17,11 +18,14 @@ function App() {
       <OnOff />
       <SelfControledAccordion title={'Menu'}/>
       <SelfControledAccordion title={'Users'}/>
+      <SelfControledRaiting/>
+      <SelfControledRaiting/>
+      <SelfControledRaiting/>
       {/* <OnOff active={false}/> */}
       {/* <PageTitle title={'This is App Component'} />
       <Rating value={0}/> */}
-      <Accordion title={'Menu'} collapsed={true}/>
-      <Accordion title={'Users'} collapsed={false}/>
+      {/* <Accordion title={'Menu'} collapsed={true}/>
+      <Accordion title={'Users'} collapsed={false}/> */}
       {/* <Rating value={4}/>
       <Rating value={1}/>
       <Rating value={5}/>
