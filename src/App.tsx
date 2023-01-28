@@ -1,36 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
 import { OnOff } from './components/OnOff/OnOff';
-import Rating from './components/Rating/Rating';
+import Rating, { RatingValuType } from './components/Rating/Rating';
 import { SelfControledAccordion } from './components/SelfControledAccordion/SelfControledAccordion';
 import { SelfControledRaiting } from './components/SelfControledRaiting/SelfControledRaiting';
 
 
 function App() {
   console.log('App redering');
+  const [ratingValue, setRatingValue] = useState<RatingValuType>(1)
+  const [accordinonCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+
   return (
     <div className={'App'}>
+      {/* <OnOff />
+      <OnOff /> */}
+      {/* <OnOff />
       <OnOff />
-      <OnOff />
-      <OnOff />
-      <OnOff />
-      <OnOff />
-      <SelfControledAccordion title={'Menu'}/>
+      <OnOff /> */}
+      {/* <SelfControledAccordion title={'Menu'}/>
       <SelfControledAccordion title={'Users'}/>
       <SelfControledRaiting/>
       <SelfControledRaiting/>
-      <SelfControledRaiting/>
+      <SelfControledRaiting/> */}
       {/* <OnOff active={false}/> */}
-      {/* <PageTitle title={'This is App Component'} />
-      <Rating value={0}/> */}
-      {/* <Accordion title={'Menu'} collapsed={true}/>
-      <Accordion title={'Users'} collapsed={false}/> */}
-      {/* <Rating value={4}/>
-      <Rating value={1}/>
-      <Rating value={5}/>
-      <Rating value={66}/>
-      <Rating value={2}/>  */}
+      <PageTitle title={'This is App Component'} />
+
+      <Accordion title={'Menu'} collapsed={accordinonCollapsed} onClick={()=>setAccordionCollapsed(!accordinonCollapsed)}/>
+      <Accordion title={'Users'} collapsed={accordinonCollapsed} onClick={()=>setAccordionCollapsed(!accordinonCollapsed)}/>
+      {/* <Rating value={ratingValue} onClick={setRatingValue}/>
+      <Rating value={ratingValue} onClick={setRatingValue}/>
+      <Rating value={ratingValue} onClick={setRatingValue}/>
+      <Rating value={ratingValue} onClick={setRatingValue}/>
+      <Rating value={ratingValue} onClick={setRatingValue}/>  */}
     </div>
   );
 }

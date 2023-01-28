@@ -13,8 +13,8 @@ export function SelfControledAccordion(props: AccordionPropsType) {
 
   return (
     <div>
-      <AccordionTitle title={props.title} /> 
-      <button onClick={()=> setColapsed(!collapsed)}>uncollapsed</button>
+      <AccordionTitle title={props.title} onClick={()=>setColapsed(!collapsed)}/> 
+      <button onClick={()=> setColapsed(!collapsed)}>{!collapsed ? 'Collaps': 'Uncollaps'}</button>
       { !collapsed && <AccordionBody />}
     </div>
   );
@@ -22,13 +22,13 @@ export function SelfControledAccordion(props: AccordionPropsType) {
 
 type AccordionTitlePropsType = {
   title: string,
-
+  onClick: ()=> void
 }
 
 
 function AccordionTitle(props: AccordionTitlePropsType) {
   console.log('AccordionTitle redering');
-  return <h3>{props.title}</h3>;
+  return <h3 onClick={props.onClick}>{props.title}</h3>;
 }
 
 function AccordionBody() {
