@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
-import { ControlledCheckbox, ControlledInput, ControlledSelect } from './components/ControlledInput';
+import { ControlledCheckbox, ControlledInput, ControlledSelect } from './components/Inputs/ControlledInput';
 import { OnOff } from './components/OnOff/OnOff';
 import Rating, { RatingValuType } from './components/Rating/Rating';
 import { SelfControledAccordion } from './components/SelfControledAccordion/SelfControledAccordion';
 import { SelfControledRaiting } from './components/SelfControledRaiting/SelfControledRaiting';
-import { UncontrolledInput, UncontrolledInputWithTrackedValue } from './components/UncontrolledInput';
+import { UncontrolledInput, UncontrolledInputWithTrackedValue } from './components/Inputs/UncontrolledInput';
 
 
 function App() {
@@ -14,22 +14,29 @@ function App() {
   const [ratingValue, setRatingValue] = useState<RatingValuType>(1)
   const [accordinonCollapsed, setAccordionCollapsed] = useState<boolean>(false)
 
+  const itemsMenu = [
+    {title: 'Beef', value: 1 }, 
+    {title: 'Fish', value: 1 }, 
+    {title: 'Vegan', value: 3}, 
+    {title: 'Liver', value: 4}
+  ]
+  const itemsUsers = [
+    {title: 'Alex', value: 1 }, 
+    {title: 'Lera', value: 2 }, 
+    {title: 'Soko', value: 3}, 
+    {title: 'Crosby', value: 4}
+  ]
+
+  const onclickHandler = (value: any) => {
+    console.log( value < 2 ? `${value} beer please` : `${value} beers please` ); 
+  }
+
   return (
     <div className={'App'}>
 
-      <ControlledInput value={'bbbb'}/>
-      <UncontrolledInput/>
-      <UncontrolledInputWithTrackedValue />
-      <ControlledCheckbox/>
-      <ControlledSelect/>
-      {/* <OnOff />
-      <OnOff /> */}
-      {/* <OnOff />
-      <OnOff />
-      <OnOff /> */}
-      {/* <SelfControledAccordion title={'Menu'}/>
-      <SelfControledAccordion title={'Users'}/>
-      <SelfControledRaiting/>
+      <SelfControledAccordion title={'Menu'} items={itemsMenu} onclickHandler={onclickHandler}/>
+      <SelfControledAccordion title={'Users'} items={itemsUsers} onclickHandler={onclickHandler}/>
+      {/* <SelfControledRaiting/>
       <SelfControledRaiting/>
       <SelfControledRaiting/> */}
       {/* <OnOff active={false}/> */}
