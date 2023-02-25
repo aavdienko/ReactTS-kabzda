@@ -7,6 +7,7 @@ import Rating, { RatingValuType } from './components/Rating/Rating';
 import { SelfControledAccordion } from './components/SelfControledAccordion/SelfControledAccordion';
 import { SelfControledRaiting } from './components/SelfControledRaiting/SelfControledRaiting';
 import { UncontrolledInput, UncontrolledInputWithTrackedValue } from './components/Inputs/UncontrolledInput';
+import { Select } from './components/Select/Select';
 
 
 function App() {
@@ -27,8 +28,14 @@ function App() {
     {title: 'Crosby', value: 4}
   ]
 
+  const [selectValue, selectSetValue]=useState('2')
+
   const onclickHandler = (value: any) => {
     console.log( value < 2 ? `${value} beer please` : `${value} beers please` ); 
+  }
+
+  const onChange = (value: any) => {
+    selectSetValue(value)
   }
 
   return (
@@ -36,6 +43,11 @@ function App() {
 
       <SelfControledAccordion title={'Menu'} items={itemsMenu} onclickHandler={onclickHandler}/>
       <SelfControledAccordion title={'Users'} items={itemsUsers} onclickHandler={onclickHandler}/>
+      <Select value={selectValue} onChange={onChange} items={[
+        {value: "1", title: 'Praha'},
+        {value: "2", title: 'Brno'},
+        {value: "3", title: 'Plzen'}
+      ]}/>
       {/* <SelfControledRaiting/>
       <SelfControledRaiting/>
       <SelfControledRaiting/> */}
