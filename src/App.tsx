@@ -40,8 +40,8 @@ function App() {
   return (
     <div className={'App'}>
 
-      {/* <SelfControledAccordion title={'Menu'} items={itemsMenu} onclickHandler={onclickHandler}/>
-      <SelfControledAccordion title={'Users'} items={itemsUsers} onclickHandler={onclickHandler}/> */}
+      <SelfControledAccordion title={'Menu'} items={itemsMenu} onclickHandler={onclickHandler}/>
+      <SelfControledAccordion title={'Users'} items={itemsUsers} onclickHandler={onclickHandler}/>
       <Select value={selectValue} onChange={onChange} items={[
         {value: "1", title: 'Praha'},
         {value: "2", title: 'Brno'},
