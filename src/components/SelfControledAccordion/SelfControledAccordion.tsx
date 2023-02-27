@@ -1,4 +1,5 @@
-import React, { useReducer, useState } from 'react';
+import { useReducer, useState } from 'react';
+import { collapsedAC, reducer } from './SelfContAccordionReducer';
 
 type ItemsType = {
   title: string
@@ -13,29 +14,6 @@ type AccordionPropsType = {
   // collapsed: boolean
 }
 
-type CollapsedACType = ReturnType<typeof collapsedAC>
-
-type MainActionType = CollapsedACType
-
-// type MainActionType = {
-//   type: string
-// }
-
-export const reducer = (state: boolean, action: MainActionType) => {
-  //asdasdasd
-  switch(action.type){
-    case 'COLAPSED': {
-      return !state
-    }
-    default: return state
-  }
-}
-
-export const collapsedAC = () =>{
-  return{
-    type: 'COLAPSED'
-  } as const
-}
 
 
 export function SelfControledAccordion(props: AccordionPropsType) {
