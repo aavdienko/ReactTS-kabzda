@@ -1,3 +1,4 @@
+import React from "react"
 import { FC, useState } from "react"
 import { isPropertySignature } from "typescript"
 
@@ -37,11 +38,44 @@ export const OnOff: FC<OnOffPropsType> = (props) => {
     backgroundColor: active ? 'green' : 'red'
   }
 
+
+
+
+  const OnMemo = () => {
+    console.log('on is rendering');
+    return (
+      <div style={onStyle} onClick={()=>{setActive(true)}}>On</div>
+    )
+  }
+
+  const On = React.memo(OnMemo)
+
+  const OffMemo = () => {
+    console.log('off is rendering');
+    return (
+      <div style={offStyle} onClick={()=>{setActive(false)}}>Off</div>
+    )
+  }
+
+  const Off = React.memo(OffMemo)
+
+  const IndicatorMemo = () => {
+    console.log('Indicator is rendering');
+    return (
+      <div style={indicatorStyle}></div>
+    )
+  }
+
+  const Indicator = React.memo(IndicatorMemo)
+
   return (
     <div>
-      <div style={onStyle} onClick={()=>{setActive(true)}}>On</div>
+      <On/>
+      <Off/>
+      <Indicator/>
+      {/* <div style={onStyle} onClick={()=>{setActive(true)}}>On</div>
       <div style={offStyle} onClick={()=>{setActive(false)}}>Off</div>
-      <div style={indicatorStyle}></div>
+      <div style={indicatorStyle}></div> */}
     </div>
   )
 }

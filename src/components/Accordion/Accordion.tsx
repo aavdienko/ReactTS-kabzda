@@ -21,13 +21,15 @@ type AccordionTitlePropsType = {
   onClick: () => void
 }
 
+const AccordionTitle = React.memo(AccordionTitleMemo)
+const AccordionBody = React.memo(AccordionBodyMemo)
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleMemo(props: AccordionTitlePropsType) {
   console.log('AccordionTitle redering');
   return <h3 onClick={props.onClick}>{props.title}</h3>;
 }
 
-function AccordionBody() {
+function AccordionBodyMemo() {
   console.log('AccordionBody redering');
   return (
     <ul>

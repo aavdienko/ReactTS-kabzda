@@ -48,11 +48,11 @@ function App() {
         {value: "2", title: 'Brno'},
         {value: "3", title: 'Plzen'}
       ]}/> */}
-      <MemoExample/>
+      {/* <MemoExample/> */}
       {/* <SelfControledRaiting/>
       <SelfControledRaiting/>
       <SelfControledRaiting/> */}
-      {/* <OnOff active={false}/> */}
+      {/* <OnOff/> */}
       {/* <PageTitle title={'This is App Component'} />
 
       <Accordion title={'Menu'} collapsed={accordinonCollapsed} onClick={()=>setAccordionCollapsed(!accordinonCollapsed)}/>
