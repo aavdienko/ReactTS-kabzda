@@ -17,6 +17,7 @@ import {
 import { Select } from './components/Select/Select';
 import { MemoExample } from './components/MemoExample/MemoExample';
 import { HelpsToReactMemoExample, UseMemoCountingExample } from './components/UseMemo/UseMemoxample';
+import { LikeUseCalback } from './components/UseCalback/UseCalbackExample';
 
 function App() {
   const [ratingValue, setRatingValue] = useState<RatingValuType>(1);
@@ -47,8 +48,9 @@ function App() {
 
   return (
     <div className={'App'}>
-      <UseMemoCountingExample />
-      <HelpsToReactMemoExample/>
+      <LikeUseCalback/>
+      {/* <UseMemoCountingExample />
+      <HelpsToReactMemoExample/> */}
       {/* <SelfControledAccordion title={'Menu'} items={itemsMenu} onclickHandler={onclickHandler}/> */}
       {/* <SelfControledAccordion title={'Users'} items={itemsUsers} onclickHandler={onclickHandler}/> */}
       {/* <Select value={selectValue} onChange={onChange} items={[
