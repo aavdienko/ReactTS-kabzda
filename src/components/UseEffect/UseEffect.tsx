@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 
 //навороченный useState
 
-export const UseEffect = () => {
+export const SimpleUseEffect = () => {
 
 // simpleExample
 
@@ -52,3 +52,44 @@ export const UseEffect = () => {
 
 }
 
+export const SetTimeoutUseEffect = () => {
+
+    const [fake, setFake] = useState(1)
+    const [counter, setCounter] = useState(1)
+    console.log('SetTimeoutUseEffect');
+  
+    // useEffect сработает useEffect first render + counter change
+    useEffect( () => {
+      setTimeout( () => {
+        console.log('useEffect first render + counter change');
+        document.title = counter.toString()
+      })
+    }, [counter])
+  
+    // // useEffect сработает всегда
+    useEffect( () => {
+      setTimeout( () => {
+        console.log('useEffect allways');
+        document.title = counter.toString()
+      })
+    })
+
+    // useEffect сработает useEffect first render
+    useEffect( () => {
+      setTimeout( () => {
+        console.log('useEffect first render');
+        document.title = counter.toString()
+      })
+    }, [])
+  
+  
+    return (
+      <div>
+        Hello, {counter}
+        <button onClick={()=> setCounter(counter + 1)}>+</button>
+        <button onClick={()=> setFake(fake + 1)}>+</button>
+      </div>
+    )
+  
+  }
+  
