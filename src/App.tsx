@@ -20,6 +20,8 @@ import { HelpsToReactMemoExample, UseMemoCountingExample } from './components/Us
 import { LikeUseCalback } from './components/UseCalback/UseCalbackExample';
 import { UseState } from './components/UseState/UseState';
 import { SetTimeoutUseEffect, SimpleUseEffect } from './components/UseEffect/UseEffect';
+import { OwnClock } from './components/UseEffect/OwnClock';
+import { Clock } from './components/Clock/Clock';
 
 function App() {
   const [ratingValue, setRatingValue] = useState<RatingValuType>(1);
@@ -50,10 +52,12 @@ function App() {
 
   return (
     <div className={'App'}>
+      <Clock/>
+      {/* <OwnClock/> */}
       {/* <LikeUseCalback/> */}
       {/* <UseState/> */}
       {/* <SimpleUseEffect/> */}
-      <SetTimeoutUseEffect/>
+      {/* <SetTimeoutUseEffect/> */}
       {/* <UseMemoCountingExample />
       <HelpsToReactMemoExample/> */}
       {/* <SelfControledAccordion title={'Menu'} items={itemsMenu} onclickHandler={onclickHandler}/> */}
