@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react"
+import { AnalogClock } from "./AnalogClock"
+import { DigitalClock } from "./DigitalClock"
 
 
-const getTwoDigitsString = (number: number) => {
+export const getTwoDigitsString = (number: number) => {
   return number < 10 ? '0' + number : number
 }
 
-export const Clock = () => {
+type ClockPropsType = {
+  mode: 'digital' | 'analog'
+}
+
+export const Clock = (props: ClockPropsType) => {
   const [date, setDate] = useState(new Date())
 
   useEffect(()=>{
@@ -20,13 +26,8 @@ export const Clock = () => {
   },  [])
 
   return (
-    <div>
-      <span>{getTwoDigitsString(date.getHours())}</span>
-      :
-      <span>{getTwoDigitsString(date.getMinutes())}</span>
-      :
-      <span>{getTwoDigitsString(date.getSeconds())}</span>
-
-    </div>
+    props.mode === 'digital' 
+      ? <DigitalClock date={date}/>
+      : <AnalogClock date={date}/>
   )
 }
