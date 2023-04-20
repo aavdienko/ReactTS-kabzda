@@ -19,7 +19,7 @@ import { MemoExample } from './components/MemoExample/MemoExample';
 import { HelpsToReactMemoExample, UseMemoCountingExample } from './components/UseMemo/UseMemoxample';
 import { LikeUseCalback } from './components/UseCalback/UseCalbackExample';
 import { UseState } from './components/UseState/UseState';
-import { SetTimeoutUseEffect, SimpleUseEffect } from './components/UseEffect/UseEffect';
+import { KeysTrackerExample, ResetEffectExample, SetTimeoutUseEffect, SimpleUseEffect } from './components/UseEffect/UseEffect';
 import { OwnClock } from './components/UseEffect/OwnClock';
 import { Clock,} from './components/Clock/Clock';
 
@@ -52,8 +52,10 @@ function App() {
 
   return (
     <div className={'App'}>
-      <Clock mode={'digital'}/>
-      <Clock mode={'analog'}/>
+      {/* <Clock mode={'digital'}/>
+      <Clock mode={'analog'}/> */}
+      <ResetEffectExample/>
+      <KeysTrackerExample/>
       {/* <OwnClock/> */}
       {/* <LikeUseCalback/> */}
       {/* <UseState/> */}
